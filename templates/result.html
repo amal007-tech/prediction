@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <script>
+        function displayResult(prediction) {
+            var resultContainer = document.getElementById('resultContainer');
+            
+            if (prediction == 0) {
+                resultContainer.innerHTML = '<p>You have diabetes.</p>';
+            } else {
+                resultContainer.innerHTML = '<p>You do not have diabetes.</p>';
+            }
+        }
+    
+        // Get the prediction value from the server response or wherever it is available
+        var predictionValue = {{ prediction }};  // Assuming you are using Flask template syntax
+    
+        // Call the displayResult function
+        displayResult(predictionValue);
+    </script>
+    
+</head>
+<body>
+    <h1>Prediction Result</h1>
+   
+    <a href="/">Back to Home</a>
+</body>
+</html>
